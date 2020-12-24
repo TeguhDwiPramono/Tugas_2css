@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+    {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+body
+{
+    background-color: gainsboro;
+}
+ 
+.badan-utama
+{
+    max-width: 1500px;
+    margin: 0px auto;
+    background-color: white;
+    padding: 0px;
+    overflow: hidden;
+}
+ 
+header
+{
+    text-align: center;
+
+    background-color: #FF7F00;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: 40px;
+}
+ 
+
+ 
+.bilah-menu-atas {
+  width: 100%;
+  min-width: 960px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 52px;
+  font-size: 13px;
+  z-index: 99;
+  white-space: nowrap;
+  background-color: #1C1C1C;
+  background-image: -moz-linear-gradient(center top , rgb(20, 132, 206) 0%, #336699 100%);
+  box-shadow: 0px 2px 0px rgb(14, 90, 140);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/*Now the styles*/
+* {
+    margin: 0; 
+    padding: 0;
+}
+body {
+    background: #ccc; 
+    font-family: arial, verdana, tahoma;
+}
+
+/*Time to apply widths for accordian to work
+Width of image = 640px
+total images = 5
+so width of hovered image = 640px
+width of un-hovered image = 40px - you can set this to anything
+so total container width = 640 + 40*4 = 800px;
+default width = 800/5 = 160px;
+*/
+
+.accordian {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    
+    /*Time for some styling*/
+    margin: 0px auto;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+    width: 2000px;
+    /*This will give ample space to the last item to move
+    instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+    position: relative;
+    display: block;
+    width: 160px;
+    float: left;
+    
+    border-left: 1px solid #888;
+    
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    
+    /*Transitions to give animation effect*/
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    /*If you hover on the images now you should be able to 
+    see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+    display: block;
+}
+
+/*Image title styles*/
+.image_title {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0; bottom: 0; 
+width: 640px;   
+
+}
+.image_title a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.kolom-utama {
+  -moz-transition: all 0.2s linear 0s;
+  width: 960px;
+  height: auto;
+  margin: 0px auto;
+}
+
+.kolom-menu {
+  width: 521px;
+  height: auto;
+  margin: 0px 0px 0px -41px;
+  float: left;
+  display: inline;
+}
+
+.kolom-menu ul {
+  height: auto;
+  margin-top: 0px;
+}
+
+.kolom-menu ul li {
+  float: left;
+  position: relative;
+  list-style: none outside none;
+}
+
+.kolom-menu ul li:first-child {
+  border-left: 1px solid rgba(30, 30, 30, 0.125);
+}
+
+.kolom-menu ul li a {
+  color: #EFF5FB;
+  font-weight: bold;
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
+
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  position: relative;
+  border-right: 1px solid rgba(30, 30, 30, 0.125);
+  box-shadow: 1px 0px 0px rgba(255, 255, 255, 0.1);
+
+}
+
+.kolom-menu ul li a:hover, .kolom-menu ul li a:focus {
+  color: #151515;
+
+}
+ 
+.navigasi li 
+{
+    float: left;
+}
+ 
+.navigasi li a 
+{
+    display: block;
+    color: #151515;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+ 
+.navigasi li a:hover 
+{
+    background-color:red;
+    transition-duration: 2s;
+}
+ 
+.banner
+{
+    
+    margin-bottom: 15px;
+}
+ 
+.banner img
+{
+    
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+ 
+.kotak
+{
+    border: 1px solid gainsboro;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+ 
+.kotak h3
+{
+    background-color: #FF4000;;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 13px;
+}
+ 
+.kotak img
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+ 
+.kotak p
+{
+    margin-bottom: 10px;
+}
+ 
+.menu-kiri
+{
+    width: 320px;
+    margin-right: 10px;
+    color: #FF4000;
+    float: left;
+
+}
+ 
+.menu-tengah
+{
+    width: 53%;
+    margin-right: 10px;
+    float: left;
+}
+ 
+.menu-tengah h3
+{
+    background: none;
+    color: crimson;
+    margin-bottom: 0;
+}
+ 
+.tanggal-posting
+{
+    color: gray;
+    text-align: right;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: block;
+}
+ 
+.tombol
+{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    width: 120px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+ 
+.tombol:hover
+{
+    background-color: black;
+    transition-duration: 2s;
+}
+ 
+.tombol-pesan
+{
+    background-color: #F4A460;
+}
+ 
+.tombol-lengkap
+{
+    background-color: #F4A460;
+}
+ 
+.menu-kanan
+{
+    width: 320px;
+    float: left;
+}
+ 
+.menu-kanan, .menu-kiri, .menu-tengah
+{
+    margin-bottom: 15px;
+}
+ 
+footer
+{
+    clear: both;
+    background-color: #696969;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+ 
+.menu-artikel ul
+{
+    list-style-type: none;
+}
+ 
+.menu-artikel ul li a
+{
+    text-decoration: none;
+    display: block;
+    padding: 13px;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 12px;
+    color: black;
+}
+ 
+.menu-artikel ul li a:hover
+{
+    color: darkorange;
+    border-bottom: 5px double chocolate;
+    transition-duration: 2s;
+}
+ 
+ 
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Responsive</title>
+    
+</head>
+<body>
+     
+    <div class="badan-utama">
+        
+        <header>
+         
+        </header>
+ 
+       <div class='bilah-menu-atas' id='bilahmenuatas'>
+  <div class='kolom-utama'>
+    <div class='kolom-menu'>
+      <ul>
+        <img src="logo.png "  width="200" height="50" >
+        </li>
+       
+       
+      </ul>
+    </div>
+    <div class='kolom-menu'>
+      <ul style='float: right'>
+        <li><a href='URL'>Home </a></li>
+        <li><a href='URL'>Profile </a></li>
+        <li><a href='URL'>Students</a></li>
+        <li><a href='URL'>Academic matters</a></li>
+        <li><a href='URL'>Offices</a></li>
+        <li><a href='URL'>Units</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 
+   <div class="accordian">
+    <ul>
+        <li>
+            <div class="image_title">
+                <a href="#">Slide 1</a>
+            </div>
+            <a href="#">
+                <img src="3.png"/>
+            </a>
+        </li>
+        <li>
+            <div class="image_title">
+                <a href="#">Slide 2</a>
+            </div>
+            <a href="#">
+                <img src="2.png"/>
+            </a>
+        </li>
+        <li>
+       
+            <a href="#">
+                <img src="5.png"/>
+            </a>
+        </li>
+    </ul>
+</div>
+    
+ 
+        <div class="menu-kiri" >
+            <div class="kotak">
+                <h3>Login</h3>
+               <label for="uname"><b>Username :</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+<br> </br>
+ 
+    <label for="psw"><b>Password  :</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+<br> </br>
+ 
+                <a class="tombol tombol-pesan" href="#">Login</a>
+            </div>
+
+            <img src="pon.GIF" width="300" height="220">
+                <br> </br>
+                <img src="b1.png" width="300" height="220">
+                <br>
+                    
+                </br>
+                <img src="b2.png" width="300" height="220">
+                <br>
+                    
+                </br>
+                <img src="b3.png" width="300" height="220">
+            </div>
+            
+        
+ 
+        <div class="menu-tengah">
+            <div class="kotak">
+                
+                <span class="tanggal-posting">
+                    Diposting pada 10.00 WIB, 17 Desember 2020
+                </span>
+ 
+                <img src="uni.png">
+                <h1> Universitas Kanjuruhan</h1>
+<p> 
+Universitas Kanjuruhan Malang adalah salah satu Perguruan Tinggi Swasta terkemuka di Kota Malang dan merupakan proses pengembangan merger antara IKIP PGRI Malang dengan Sekolah Tinggi Bahasa Asing (STIBA) Kanjuruhan Malang yang bernaung di bawah bendera Yayasan Pembina Lembaga Perguruan Tinggi PGRI. Yayasan ini kemudian berubah menjadi Perkumpulan Pembina Lembaga Pendidikan Perguruan Tinggi PGRI (PPLP PT PGRI). Dengan demikian, berdirinya Universitas Kan-juruhan Malang merupakan proses pengembangan perguruan tinggi PGRI dengan SK Mendiknas nomor 106/D/0/2001.</p>
+
+<p> Sebelum menjadi sebuah universitas, perjalanan panjang telah mewar-nai perguruan tinggi ini. Pasang surut penyelenggaraan telah dialami dengan berbagai tantangan dan halangan, tetapi dengan dilandasi moto Brilliant, Bright, future membuat perkembangannya semakin mantap.
+</p>
+<p>
+Gagasan yang dirintis untuk mendirikan Lembaga Pendidikan Tenaga Kependidikan PGRI di Jawa Timur lahir dari peran tokoh pejuang PGRI. bernama Abdul Radjab (almarhum). Pendirian Pendidikan Tinggi PGRI bertujuan untuk meningkatkan pendidikan para guru, yang pada waktu itu tidak mendapat kesempatan melanjutkan studi ataupun tugas belajar dari pemerintah. Mengingat, sejak proklamasi sampai dengan tahun 1960-an tugas belajar untuk studi lanjut bagi guru amatlah langka.
+</p>
+<p>
+Atas pertimbangan fakta tersebut Bapak A. Radjab beserta para pendukungnya membuka suatu program pendidikan Tinggi PGRI bagi guru-guru tersebut. Ide besar ini kemudian direalisasikan pada tahun 1957 dalam bentuk program pendidikan tinggi PGRI, kursus BI (tiga tahun), dan ilmu mendidik. Pada perkembangannya, setelah kursus BI meluluskan beberapa kali lewat ujian negara, kemudian berubah menjadi FKIP PGRI Malang. Setelah keluar SK Presiden No.1 Tahun 1963 tentang Integrasi Pendidikan Tinggi, selanjutnya FKIP PGRI berubah menjadi IKIP PGRI Malang.
+</p>
+<p>
+Seiring dengan perkembangan pendidikan, banyak keinginan para guru untuk mendapatkan pendidikan tinggi. Untuk mewadahi keinginan itu kemudian dibukalah Extension Course di beberapa daerah di Jawa timur. Program ini kenyataannya dapat berkembang dengan pesat. Demi efisiensi dan efektivitas pengelolaan, dibentuklah pusat-pusat penggerak.
+</p>
+
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>                
+                <a class="tombol tombol-lengkap" href="#">Selengkapnya</a>
+            </div>
+        </div>
+ 
+        <div class="menu-kanan">
+            <div class="kotak">
+                <h3>Agenda Terdekat</h3>
+                <img src="sem.jpg">
+ 
+                <h4 align="center">Seminar Nasional</h4>
+                <center>
+                    <p>Sabtu pukul 08.00 WIB - 13.00 WIB</p>
+                </center>
+            </div>
+ 
+ <div class="kotak">
+                <h3>Pengumuman</h3>
+                 <nav class="menu-artikel">
+                 <ul>
+                        <li><a href="#">Pendaftaran</a></li>
+                        <li><a href="#">Akademik</a></li>
+                        <li><a href="#">E-jurnal</a></li>
+                        <li><a href="#">Kepegawaian</a></li>
+                        <li><a href="#">Repositori</a></li>
+                    </ul>
+            </div>
+            <div class="kotak">
+                <h3>Berita Terbaru</h3>
+ 
+                <nav class="menu-artikel">
+                    <ul>
+                        <li><a href="#">Program Kerja</a></li>
+                        <li><a href="#">Galery</a></li>
+                        <li><a href="#">Raih juara Blatix</a></li>
+                        <li><a href="#">UNIKAMA kilau budaya STAGE3</a></li>
+                        <li><a href="#">Launching perubahan nama</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+ 
+        <footer>
+            @teguhdwipramono 2020 || CSS Pertemuan ke 2
+        </footer>
+ 
+    </div>
+ 
+</body>
+</html>
